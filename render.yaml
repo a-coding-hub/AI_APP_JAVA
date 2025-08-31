@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ai-app-backend
+    env: java
+    plan: free
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/AI_APP-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: hf.api.key
+        sync: false
+      - key: hf.api.url
+        sync: false
